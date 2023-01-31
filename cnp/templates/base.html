@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Community Needs Platform</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/resources.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/request-resource.css' %}">
+
+  </head>
+  <body>
+    {% include 'navbar.html' %} 
+
+    {% block content %}
+
+    {%endblock%}
+
+<footer>
+    <p>Copyright ©2022 Community Needs Platform</p>
+  </footer>
+  </body>
+</html>

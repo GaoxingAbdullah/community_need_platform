@@ -1,0 +1,46 @@
+#categories {
+  margin-bottom: 2em;
+}
+
+#categories h2 {
+  margin-bottom: 1em;
+}
+
+#categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#categories li {
+  margin-bottom: 1em;
+}
+
+#categories a {
+    color: #4CAF50;
+  text-decoration: none;
+}
+
+section {
+  margin-top: 2em;
+}
+
+section h2 {
+  margin-bottom: 1em;
+}
+
+section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section li {
+  margin-bottom: 1em;
+}
+
+section a {
+    color: #4CAF50;
+  text-decoration: none;
+}
+
