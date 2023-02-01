@@ -3,7 +3,7 @@ from django.db import models
 class Event(models.Model):
     title = models.CharField(max_length=200, null=True)
     description = models.TextField(null=True)
-    poster = models.ImageField(max_length=200, null=True)
+    poster = models.ImageField(upload_to='images/', null=True)
     eventDate = models.DateField(null=True)
     eventTime = models.TimeField(null=True)
     location = models.CharField(max_length=200, null=True)

@@ -1,32 +1,35 @@
 {% extends 'base.html' %}
 
 {% block  content %}
-    <main>
-      <h2>Upcoming Events</h2>
-      <section id="upcoming-events">
-        <ul>
-          <li>
-            <h3>Food Drive</h3>
-            <p>Join us in collecting non-perishable food items for the local food bank.</p>
-            <p>Date: January 20, 2022</p>
-            <p>Time: 10:00am - 2:00pm</p>
-            <p>Location: 123 Main St.</p>
-          </li>
-          <li>
-            <h3>Job Fair</h3>
-            <p>Meet with local employers and learn about job opportunities.</p>
-            <p>Date: February 10, 2022</p>
-            <p>Time: 9:00am - 1:00pm</p>
-            <p>Location: 456 Park Ave.</p>
-          </li>
-          <li>
-            <h3>Community Cleanup</h3>
-            <p>Help us keep our community clean by joining our community cleanup event.</p>
-            <p>Date: March 15, 2022</p>
-            <p>Time: 8:00am - 12:00pm</p>
-            <p>Location: 789 Elm St.</p>
-          </li>
-        </ul>
-      </section>
-    </main>
+<main>
+    <div  class="container">
+       <h2 class="mp-3"> Upcoming Events</h2>
+
+        {% load  static %}
+        {% for event in events %}
+        <div class="card mb-3" style="max-width: 700px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                {% if event.poster %}
+                <a href="">
+                <img src="{{ event.poster.url }}" style="width:600px" class="img-fluid rounded-start" alt="...">
+              </a>
+               {% endif %}
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h3 class="card-title">{{ event.title }}</h3>
+                  <p class="card-text">{{ event.description }}</p>
+                  <p class="card-text">Date: {{event.eventDate }}</p>
+                  <p class="card-text" >Time: {{ event.eventTime }}</p>
+                  <p class="card-text">Location: {{ event.location }}</p>
+                  <p class="card-text"><small class="text-muted">Posted {{event.date_created | timesince}}  ago</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+    </div>
+</main>
     {% endblock  %}

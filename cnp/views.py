@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Event
 
 # Create your views here.
 
@@ -13,7 +14,11 @@ def requestResources(request):
     return render(request, 'request-resources.html')
 
 def events(request):
-    return render(request, 'events.html')
+    #get all events
+    events = Event.objects.all()
+    context = {"events": events}
+    
+    return render(request, 'events.html', context)
 
 def community(request):
     return render(request, 'events.html')
