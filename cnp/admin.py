@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Event
+from .models import Event, RequestResource
 
 # Register your models here.
 class EventAdmin(admin.ModelAdmin):
@@ -7,4 +7,11 @@ class EventAdmin(admin.ModelAdmin):
     list_display = ['poster', 'title', 'description', 'eventDate', 'eventTime', 'location', 'date_created']
     list_filter = ['eventDate', 'eventTime', 'location']
     
+class RequestResourceAdmin(admin.ModelAdmin):
+    search_fields = ['resourceNeed', 'details', 'userName', 'email']
+    list_display = ['userName', 'email', 'phone', 'resourceNeed', 'details', 'date_created']
+    list_filter = ['resourceNeed', 'date_created']
+    
+    
 admin.site.register(Event, EventAdmin)
+admin.site.register(RequestResource, RequestResourceAdmin)

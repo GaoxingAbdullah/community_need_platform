@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Event
+from .form import RequestResourceForm
 
 # Create your views here.
 
@@ -11,7 +12,16 @@ def resources(request):
     return render(request, 'resources.html')
 
 def requestResources(request):
-    return render(request, 'request-resources.html')
+    form = RequestResourceForm()
+    
+    if request.method == 'POST':
+        form = RequestResourceForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('community')
+        
+    context = {"form": form}
+    return render(request, 'request-resources.html', context)
 
 def events(request):
     #get all events

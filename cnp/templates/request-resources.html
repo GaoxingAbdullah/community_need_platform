@@ -10,18 +10,19 @@
         the resource you need.
       </p>
       </section>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" /><br />
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" /><br />
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" /><br />
-        <label for="resource">Resource Needed:</label>
-        <input type="text" id="resource" name="resource" /><br />
-        <label for="details">Details:</label>
-        <textarea id="details" name="details"></textarea><br />
-        <input type="submit" value="Submit" />
+      <div class="container">
+      <form method="POST" action="">
+
+         {% csrf_token %} 
+
+        {{ form }}
+        
+        <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+       
+        
       </form>
+
     </main>
     {% endblock  %}
