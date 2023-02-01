@@ -71,27 +71,8 @@ body {
     margin-bottom: 1em;
   }
   
-  #featured-resources ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  #featured-resources ul li {
-    flex-basis: 30%;
-    padding: 1em;
-    text-align: center;
-  }
-  
-  #featured-resources ul li h3 {
-    margin-bottom: 0.5em;
-  }
-  
-  #featured-resources ul li a {
-    color: #4CAF50;
+  #featured-resources  a .btn {
+    background-color: #4CAF50;
     text-decoration: none;
   }
   
