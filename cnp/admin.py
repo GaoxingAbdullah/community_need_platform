@@ -4,7 +4,7 @@ from .models import Event, RequestResource
 # Register your models here.
 class EventAdmin(admin.ModelAdmin):
     search_fields = ['title', 'location']
-    list_display = ['poster', 'title', 'description', 'eventDate', 'eventTime', 'location', 'date_created']
+    list_display = ['title', 'description', 'poster', 'eventDate', 'eventTime', 'location', 'date_created']
     list_filter = ['eventDate', 'eventTime', 'location']
     
 class RequestResourceAdmin(admin.ModelAdmin):
